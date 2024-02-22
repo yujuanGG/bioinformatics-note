@@ -2,10 +2,95 @@
 title: "smk_algorithm_explain"
 execute: 
   freeze: true
+format:
+  html:
+    embed-resources: true
 ---
+
+```{r}
+library(tidyverse)
+library(Seurat)
+```
 
 ## Example
 
 UK_Helena: Neutrophils, 4 cartridges, 3 are good, 1 is bad.
 
-## 
+DE_Bernd: Healthy PBMC, NK population not labelled
+
+## Publication
+
+[No detectable alloreactive transcriptional responses under standard sample preparation conditions during donor-multiplexed single-cell RNA sequencing of peripheral blood mononuclear cells \| BMC Biology \| Full Text (biomedcentral.com)](https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-020-00941-x)
+
+![](images/12915_2020_941_Fig2_HTML-01.webp){width="540"}
+
+## Plot on demo data
+
+### Whole data (Include Multiplet + Undetermined)
+
+```{r}
+demo <- readRDS("~/OneDrive - BD/11_demo_data/v2_0/BD-Demo-WTA-AbSeq-SMK/BD-Demo-WTA-AbSeq-SMK_Seurat.rds")
+
+load("~/Documents/github/single-cell-boot-camp/data/chapter2.RData")
+
+cell_type <- tibble(type=demo$Cell_Type_Experimental, tag=demo$Sample_Tag)
+
+# stack
+x_order <- cell_type %>%
+  group_by(type, tag) %>%
+  tally() %>% 
+  mutate(pct = n/sum(n)) %>% 
+  filter(tag == "Undetermined") %>% 
+  arrange(desc(pct)) %>% 
+  .$type
+x_order <- c(x_order, "Dendritic")
+
+p1 <- cell_type %>% 
+  mutate(type = factor(type, levels = x_order)) %>% 
+  ggplot(aes(type, fill = tag)) +
+  geom_bar(position = "fill", ) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+```
+
+### Filtered data (exclude Multiplet + Undetermined)
+
+```{r}
+#| warning: false
+
+demo[["percent.mt"]] <- PercentageFeatureSet(demo, pattern = "^MT-")
+
+demo@meta.data %>% 
+  ggplot(aes(x=nCount_RNA, y=nFeature_RNA, color=percent.mt)) + 
+  geom_point() + 
+  scale_colour_gradient(low = "gray90", high = "black") +
+  stat_smooth(method=lm) +
+  scale_x_log10() + 
+  scale_y_log10() + 
+  theme_classic() +
+  geom_vline(xintercept = 500, colour = "red") +
+  geom_hline(yintercept = 300, colour = "red") +
+  facet_wrap(~Sample_Name) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+```{r}
+filtered <- subset(x = demo, 
+                       subset = (nCount_RNA >= 500) & 
+                         (nFeature_RNA >= 300) &
+                         (nFeature_RNA <= 5000) &
+                         (percent.mt < 25))
+
+p2 <- tibble(type=filtered$Cell_Type_Experimental, tag=filtered$Sample_Tag) %>% 
+  mutate(type = factor(type, levels = x_order)) %>% 
+  ggplot(aes(type, fill = tag)) +
+  geom_bar(position = "fill") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+```
+
+```{r}
+p1|p2
+```
+
+```{r}
+p1
+```

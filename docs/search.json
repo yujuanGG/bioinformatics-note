@@ -53,14 +53,14 @@
     "href": "to_do/smk.html",
     "title": "smk_algorithm_explain",
     "section": "",
-    "text": "UK_Helena: Neutrophils, 4 cartridges, 3 are good, 1 is bad."
+    "text": "library(tidyverse)\n\nWarning: package 'tidyr' was built under R version 4.3.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(Seurat)\n\nLoading required package: SeuratObject\nLoading required package: sp\n\n\nWarning: package 'sp' was built under R version 4.3.2\n\n\n'SeuratObject' was built with package 'Matrix' 1.6.3 but the current\nversion is 1.6.5; it is recomended that you reinstall 'SeuratObject' as\nthe ABI for 'Matrix' may have changed\n\nAttaching package: 'SeuratObject'\n\nThe following object is masked from 'package:base':\n\n    intersect"
   },
   {
     "objectID": "to_do/smk.html#example",
     "href": "to_do/smk.html#example",
     "title": "smk_algorithm_explain",
-    "section": "",
-    "text": "UK_Helena: Neutrophils, 4 cartridges, 3 are good, 1 is bad."
+    "section": "Example",
+    "text": "Example\nUK_Helena: Neutrophils, 4 cartridges, 3 are good, 1 is bad.\nDE_Bernd: Healthy PBMC, NK population not labelled"
   },
   {
     "objectID": "to_do/visualization.html",
@@ -117,5 +117,19 @@
     "title": "Reference generator",
     "section": "",
     "text": "V1.xx Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 03-28-23 20:25:22 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)\nV2.0 Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 02-14-24 08:18:17 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)\nV2.1 Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 02-19-24 19:47:23 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)"
+  },
+  {
+    "objectID": "to_do/smk.html#publication",
+    "href": "to_do/smk.html#publication",
+    "title": "smk_algorithm_explain",
+    "section": "Publication",
+    "text": "Publication\nNo detectable alloreactive transcriptional responses under standard sample preparation conditions during donor-multiplexed single-cell RNA sequencing of peripheral blood mononuclear cells | BMC Biology | Full Text (biomedcentral.com)"
+  },
+  {
+    "objectID": "to_do/smk.html#plot-on-demo-data",
+    "href": "to_do/smk.html#plot-on-demo-data",
+    "title": "smk_algorithm_explain",
+    "section": "Plot on demo data",
+    "text": "Plot on demo data\n\nWhole data (Include Multiplet + Undetermined)\n\ndemo &lt;- readRDS(\"~/OneDrive - BD/11_demo_data/v2_0/BD-Demo-WTA-AbSeq-SMK/BD-Demo-WTA-AbSeq-SMK_Seurat.rds\")\n\nload(\"~/Documents/github/single-cell-boot-camp/data/chapter2.RData\")\n\ncell_type &lt;- tibble(type=demo$Cell_Type_Experimental, tag=demo$Sample_Tag)\n\n# stack\nx_order &lt;- cell_type %&gt;%\n  group_by(type, tag) %&gt;%\n  tally() %&gt;% \n  mutate(pct = n/sum(n)) %&gt;% \n  filter(tag == \"Undetermined\") %&gt;% \n  arrange(desc(pct)) %&gt;% \n  .$type\nx_order &lt;- c(x_order, \"Dendritic\")\n\np1 &lt;- cell_type %&gt;% \n  mutate(type = factor(type, levels = x_order)) %&gt;% \n  ggplot(aes(type, fill = tag)) +\n  geom_bar(position = \"fill\", ) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))\n\n\n\nFiltered data (exclude Multiplet + Undetermined)\n\ndemo[[\"percent.mt\"]] &lt;- PercentageFeatureSet(demo, pattern = \"^MT-\")\n\ndemo@meta.data %&gt;% \n  ggplot(aes(x=nCount_RNA, y=nFeature_RNA, color=percent.mt)) + \n  geom_point() + \n  scale_colour_gradient(low = \"gray90\", high = \"black\") +\n  stat_smooth(method=lm) +\n  scale_x_log10() + \n  scale_y_log10() + \n  theme_classic() +\n  geom_vline(xintercept = 500, colour = \"red\") +\n  geom_hline(yintercept = 300, colour = \"red\") +\n  facet_wrap(~Sample_Name) +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\n\n\n\n\nfiltered &lt;- subset(x = demo, \n                       subset = (nCount_RNA &gt;= 500) & \n                         (nFeature_RNA &gt;= 300) &\n                         (nFeature_RNA &lt;= 5000) &\n                         (percent.mt &lt; 25))\n\np2 &lt;- tibble(type=filtered$Cell_Type_Experimental, tag=filtered$Sample_Tag) %&gt;% \n  mutate(type = factor(type, levels = x_order)) %&gt;% \n  ggplot(aes(type, fill = tag)) +\n  geom_bar(position = \"fill\") +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))\n\n\np1|p2\n\n\n\n\n\np1"
   }
 ]
