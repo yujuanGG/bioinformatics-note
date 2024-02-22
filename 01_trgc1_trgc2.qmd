@@ -1,0 +1,12 @@
+---
+title: "TRGC1 and TRGC2"
+---
+TRGC1: T Cell Receptor Gamma Constant 1
+TRGC2: T cell Receptor Gamma Constant 2
+
+TRGC1 has an important paralog called TRGC2. 
+
+(A paralog is a gene that shares a common ancestry with another gene within the same organism.)
+
+
+https://www.nature.com/articles/cmi201528/figures/1
