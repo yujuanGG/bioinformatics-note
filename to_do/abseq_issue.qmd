@@ -1,0 +1,15 @@
+---
+title: "abseq_issue"
+format: html
+editor: visual
+---
+
+## Tracking abseq issue
+
+Claudia De Lala
+
+IGR
+
+## Check list
+
+Do you know flow data in the same sample? Binomial vs. one modal

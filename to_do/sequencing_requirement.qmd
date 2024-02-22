@@ -1,0 +1,21 @@
+---
+title: "sequencing requirement"
+format: html
+editor: visual
+---
+
+## Low diversity
+
+It's not recommended to sequence low plex AbSeq alone in a lane.
+
+## Loading concentration
+
+## Dual index
+
+Customers need to order additional index and primers. Index and primers go hand in hand?
+
+8 lanes: Customers can order 4 i7 and do single index
+
+The diversity of the index also follows the rule. Low diversity leads to low sequencing quality in index.
+
+Reverse Primer 1 - 4: Name is Nextera, but the backbone is TrueSeq. So, it's important to use TrueSeq chemistry.

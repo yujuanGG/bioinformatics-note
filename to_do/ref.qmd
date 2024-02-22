@@ -1,0 +1,13 @@
+---
+title: "Reference generator"
+format: html
+editor: visual
+---
+
+## History
+
+V1.xx [Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 03-28-23 20:25:22 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)](https://igor.sbgenomics.com/u/devon.jensen/build-rhapsody-reference/tasks/18314f19-e902-4fd4-9413-27296edfbc2e/)
+
+V2.0 [Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 02-14-24 08:18:17 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)](https://igor.sbgenomics.com/u/devon.jensen/build-rhapsody-reference/tasks/854a30f6-18f4-4441-8f21-66fdcf2fc753/)
+
+V2.1 [Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 02-19-24 19:47:23 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)](https://igor.sbgenomics.com/u/devon.jensen/build-rhapsody-reference/tasks/7fc62e19-4b59-40fb-b753-03b00a338db3/)

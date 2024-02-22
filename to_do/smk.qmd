@@ -1,0 +1,11 @@
+---
+title: "smk_algorithm_explain"
+format: html
+editor: visual
+---
+
+## Example
+
+UK_Helena: Neutrophils, 4 cartridges, 3 are good, 1 is bad.
+
+## 

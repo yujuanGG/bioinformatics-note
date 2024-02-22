@@ -3,13 +3,13 @@ project:
   output-dir: docs
 
 website:
-  title: "website"
+  title: "Keep moving"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
       - 01_tcgr1_tcgr2.qmd
+      - about.qmd
 
 format:
   html:

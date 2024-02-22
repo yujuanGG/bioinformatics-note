@@ -1,0 +1,15 @@
+---
+title: "Extract genomic regions of interest"
+format: html
+editor: visual
+---
+
+This is an example about how to extract genomic regions of interest and put those sequences in a fasta file.
+
+We will use the software SnapGene.
+
+Firstly, download SnapGene. A free version is enough to cover this example.
+
+<https://www.snapgene.com/>
+
+Secondly, download your transcript of interest from NCBI. Please note that
