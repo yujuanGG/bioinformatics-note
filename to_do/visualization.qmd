@@ -1,9 +1,0 @@
----
-title: "visualization_umap_ridge"
-execute: 
-  freeze: true
----
-
-## Visualization
-
-UMAP visualization sometimes doesn't give the complete picture. Couple with Ridge (log10 or no log10) to draw a conclusion.
