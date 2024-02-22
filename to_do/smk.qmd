@@ -1,7 +1,7 @@
 ---
 title: "smk_algorithm_explain"
-format: html
-editor: visual
+execute: 
+  freeze: true
 ---
 
 ## Example

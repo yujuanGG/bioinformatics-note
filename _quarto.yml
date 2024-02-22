@@ -8,7 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - 01_tcgr1_tcgr2.qmd
+      - 01_trgc1_trgc2.qmd
       - about.qmd
 
 format:

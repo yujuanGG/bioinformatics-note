@@ -1,7 +1,7 @@
 ---
 title: "sequencing requirement"
-format: html
-editor: visual
+execute: 
+  freeze: true
 ---
 
 ## Low diversity

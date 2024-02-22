@@ -1,7 +1,7 @@
 ---
 title: "Extract genomic regions of interest"
-format: html
-editor: visual
+execute: 
+  freeze: true
 ---
 
 This is an example about how to extract genomic regions of interest and put those sequences in a fasta file.

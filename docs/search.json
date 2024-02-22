@@ -16,8 +16,106 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Index",
+    "title": "About the site",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "To gather notes on learning bioinformatics and immunology & oncology."
+  },
+  {
+    "objectID": "to_do/sequencing_requirement.html",
+    "href": "to_do/sequencing_requirement.html",
+    "title": "sequencing requirement",
+    "section": "",
+    "text": "It’s not recommended to sequence low plex AbSeq alone in a lane."
+  },
+  {
+    "objectID": "to_do/sequencing_requirement.html#low-diversity",
+    "href": "to_do/sequencing_requirement.html#low-diversity",
+    "title": "sequencing requirement",
+    "section": "",
+    "text": "It’s not recommended to sequence low plex AbSeq alone in a lane."
+  },
+  {
+    "objectID": "to_do/sequencing_requirement.html#loading-concentration",
+    "href": "to_do/sequencing_requirement.html#loading-concentration",
+    "title": "sequencing requirement",
+    "section": "Loading concentration",
+    "text": "Loading concentration"
+  },
+  {
+    "objectID": "to_do/sequencing_requirement.html#dual-index",
+    "href": "to_do/sequencing_requirement.html#dual-index",
+    "title": "sequencing requirement",
+    "section": "Dual index",
+    "text": "Dual index\nCustomers need to order additional index and primers. Index and primers go hand in hand?\n8 lanes: Customers can order 4 i7 and do single index\nThe diversity of the index also follows the rule. Low diversity leads to low sequencing quality in index.\nReverse Primer 1 - 4: Name is Nextera, but the backbone is TrueSeq. So, it’s important to use TrueSeq chemistry."
+  },
+  {
+    "objectID": "to_do/smk.html",
+    "href": "to_do/smk.html",
+    "title": "smk_algorithm_explain",
+    "section": "",
+    "text": "UK_Helena: Neutrophils, 4 cartridges, 3 are good, 1 is bad."
+  },
+  {
+    "objectID": "to_do/smk.html#example",
+    "href": "to_do/smk.html#example",
+    "title": "smk_algorithm_explain",
+    "section": "",
+    "text": "UK_Helena: Neutrophils, 4 cartridges, 3 are good, 1 is bad."
+  },
+  {
+    "objectID": "to_do/visualization.html",
+    "href": "to_do/visualization.html",
+    "title": "visualization_umap_ridge",
+    "section": "",
+    "text": "UMAP visualization sometimes doesn’t give the complete picture. Couple with Ridge (log10 or no log10) to draw a conclusion."
+  },
+  {
+    "objectID": "to_do/visualization.html#visualization",
+    "href": "to_do/visualization.html#visualization",
+    "title": "visualization_umap_ridge",
+    "section": "",
+    "text": "UMAP visualization sometimes doesn’t give the complete picture. Couple with Ridge (log10 or no log10) to draw a conclusion."
+  },
+  {
+    "objectID": "to_do/genomics_interest.html",
+    "href": "to_do/genomics_interest.html",
+    "title": "Extract genomic regions of interest",
+    "section": "",
+    "text": "This is an example about how to extract genomic regions of interest and put those sequences in a fasta file.\nWe will use the software SnapGene.\nFirstly, download SnapGene. A free version is enough to cover this example.\nhttps://www.snapgene.com/\nSecondly, download your transcript of interest from NCBI. Please note that"
+  },
+  {
+    "objectID": "to_do/abseq_issue.html",
+    "href": "to_do/abseq_issue.html",
+    "title": "abseq_issue",
+    "section": "",
+    "text": "Claudia De Lala\nIGR"
+  },
+  {
+    "objectID": "to_do/abseq_issue.html#tracking-abseq-issue",
+    "href": "to_do/abseq_issue.html#tracking-abseq-issue",
+    "title": "abseq_issue",
+    "section": "",
+    "text": "Claudia De Lala\nIGR"
+  },
+  {
+    "objectID": "to_do/abseq_issue.html#check-list",
+    "href": "to_do/abseq_issue.html#check-list",
+    "title": "abseq_issue",
+    "section": "Check list",
+    "text": "Check list\nDo you know flow data in the same sample? Binomial vs. one modal"
+  },
+  {
+    "objectID": "to_do/ref.html",
+    "href": "to_do/ref.html",
+    "title": "Reference generator",
+    "section": "",
+    "text": "V1.xx Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 03-28-23 20:25:22 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)\nV2.0 Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 02-14-24 08:18:17 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)\nV2.1 Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 02-19-24 19:47:23 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)"
+  },
+  {
+    "objectID": "to_do/ref.html#history",
+    "href": "to_do/ref.html#history",
+    "title": "Reference generator",
+    "section": "",
+    "text": "V1.xx Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 03-28-23 20:25:22 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)\nV2.0 Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 02-14-24 08:18:17 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)\nV2.1 Reference Files Generator for BD Rhapsody™ Sequencing Analysis Pipeline run - 02-19-24 19:47:23 ⋅ Tasks ⋅ Files ⋅ Build Rhapsody Reference (sbgenomics.com)"
   }
 ]
