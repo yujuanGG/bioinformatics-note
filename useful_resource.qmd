@@ -1,0 +1,21 @@
+---
+title: "Useful resource"
+format: html
+editor: visual
+---
+
+## Interaction with FlowJo
+
+This publication provide a workflow to export single cell data as a FCS and then import it into FlowJo for gating.
+
+<https://currentprotocols.onlinelibrary.wiley.com/doi/full/10.1002/cpz1.963>
+
+Consider:
+
+1.  Normalization is performed with Seurat but not with FlowJo.
+
+    Single cell data requires different normalization methods.
+
+    \- Experimental workflows are different.
+
+    \- Flow data uses compensation to correct for background noise.
